@@ -1,20 +1,11 @@
-// 8h horas por dia 
-// 7.500
-
-
-function teste(){
-    var qtdMesesTemNoAno = 12
-    var qtdDiasUteisSemana = 5
-    var hrsTrabalhadasPorDia = 8
-    var resultadoTotalSemanal = 0;
-    var resultadoTotalMensal = 0;
-    var resultadoValorHora;
-
-    resultadoValorHora = hrsTrabalhadasPorDia * 23 * 12
-
-    return console.log(resultadoValorHora)
-
+function calcularValorHora(salarioMensal, horasTrabalhadasNoMes) {
+    if (horasTrabalhadasNoMes <= 0) {
+        throw new Error("A quantidade de horas trabalhadas no mês deve ser maior que zero.");
+    }
+    return salarioMensal / horasTrabalhadasNoMes;
 }
 
-
-teste()
+const salario = 3000; 
+const horasMensais = 160;
+const valorHora = calcularValorHora(salario, horasMensais);
+console.log(`O valor da hora trabalhada é R$ ${valorHora.toFixed(2)}`);
